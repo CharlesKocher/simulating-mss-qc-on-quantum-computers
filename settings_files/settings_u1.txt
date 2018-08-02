@@ -1,0 +1,18 @@
+##### INPUTS
+ham_name = 'doubled_harmonic_fixed.txt'
+circuit_name = 'RYSpecialFull' 
+depth = 1 
+shots = 8192 
+optimizer_name = 'SPSA' 
+backend_name = 'local_qasm_simulator' 
+max_trials = 140 
+
+#### Results
+SPSA QASM predicted time to completion: 4.0 min
+Exact = 0.0
+VQE = 0.0
+Percent Error =   nan%
+Evaluation Time = 0.6 min
+Optimal Parameters: 
+[-3.138591553519695] # notice that this circuit gives a measurement of pi via the optimal parameter.
+e0wf = [5.0699219479654735e-12, -3.3787064904957518e-09, -3.3787064904957514e-09, 2.2516436477881377e-06, -3.3787064904957514e-09, 2.2516436477881377e-06, 2.2516436477881377e-06, -0.0015005444038676391, -3.3787064904957514e-09, 2.2516436477881377e-06, 2.2516436477881377e-06, -0.0015005444038676391, 2.2516436477881377e-06, -0.0015005444038676391, -0.0015005444038676393, 0.9999954967076345]
