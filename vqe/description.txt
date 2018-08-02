@@ -1,0 +1,5 @@
+This file goes in the directory Lib\site-packages\qiskit-acqua\vqe as a replacement for the vqe.py file there already.
+
+This step is not necessary if you modify the Jupyter Notebook vqe.ipynb to not make the convergence plot. 
+
+(QISKit's default behavior is to not return information about intermediate steps in the approximation; this was modified for internal use to visually inspect the convergence properties of the SPSA optimization).
