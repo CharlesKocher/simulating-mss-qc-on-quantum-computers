@@ -1,0 +1,17 @@
+##### INPUTS
+ham_name = 'double_well.txt' 
+circuit_name = 'RYSpecialDW'
+depth = 4 
+shots = 8192 
+optimizer_name = 'SPSA'
+backend_name = 'local_qasm_simulator'
+max_trials = 250
+
+##### Results
+SPSA QASM predicted time to completion: 7.2 min
+Exact = -5.68592235965004
+VQE = -5.5888128881918995
+Percent Error =  1.71%
+Evaluation Time = 5.1 min
+opt = [5.349789984169478, 1.2984072014815706, -0.015040561391926105, 2.9062833099679835, -3.3299008846256064]
+e0wf = [0.03705883898610596, 0.0, 0.06091303842940861, 0.0, 0.4378757092637786, 0.0, 0.6615757809986048, 0.0, 0.5652550688562318, 0.0, 0.20536472479784493, 0.0, -0.056698247725223506, 0.0, -0.02441186353107207, 0.0]
