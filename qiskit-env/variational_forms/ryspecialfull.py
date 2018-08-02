@@ -1,20 +1,4 @@
-# -*- coding: utf-8 -*-
-
-# Copyright 2018 IBM.
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-# =============================================================================
-
+# Modified from QISKit ACQUA
 import numpy as np
 from qiskit import QuantumRegister, QuantumCircuit
 
@@ -22,7 +6,7 @@ from qiskit_acqua.utils.variational_forms import VariationalForm
 
 
 class VarFormRYSpecialFull(VariationalForm):
-    """Single Y rotation."""
+    """Full set of Y rotations with one parameter."""
 
     RYSpecialFull_CONFIGURATION = {
         'name': 'RYSpecialFull',
@@ -72,7 +56,6 @@ class VarFormRYSpecialFull(VariationalForm):
             entanglement (str): 'full' or 'linear'
             initial_state (InitialState): an initial state object
         """
-        #self._num_parameters = depth*num_qubits
         self._num_parameters = 1
         depth = 1
         self._bounds = [(-np.pi, np.pi)] * self._num_parameters
@@ -107,38 +90,10 @@ class VarFormRYSpecialFull(VariationalForm):
         else:
             circuit = QuantumCircuit(q)
 
-        #param_idx = 0
-        #circuit.ry(parameters[0],q[self._num_qubits - 2])
         circuit.u3(parameters[0],0,0,q[3])
         circuit.u3(parameters[0],0,0,q[2])
         circuit.u3(parameters[0],0,0,q[1])
         circuit.u3(parameters[0],0,0,q[0])
-        #param_idx = 0
-        #for k in range(self._depth):
-            #for j in range(self._num_qubits):
-                #circuit.u3(parameters[param_idx],0,0,q[j])
-                #param_idx += 1
-        
-
-
-        
-        #for qubit in range(self._num_qubits):
-            #circuit.u3(parameters[param_idx], 0.0, 0.0, q[qubit])
-            # circuit.ry(parameters[param_idx], q[qubit])
-            #param_idx += 1
-
-        #for block in range(self._depth):
-            #circuit.barrier(q)
-            #for node in self._entangler_map:
-                #for target in self._entangler_map[node]:
-                    #circuit.u2(0.0, np.pi, q[target])  # h
-                    #circuit.cx(q[node], q[target])
-                    #circuit.u2(0.0, np.pi, q[target])  # h
-                    # circuit.cz(q[node], q[target])
-            #for qubit in range(self._num_qubits):
-                #circuit.u3(parameters[param_idx], 0.0, 0.0, q[qubit])
-                # circuit.ry(parameters[param_idx, q[qubit])
-                #param_idx += 1
         circuit.barrier(q)
 
         return circuit
