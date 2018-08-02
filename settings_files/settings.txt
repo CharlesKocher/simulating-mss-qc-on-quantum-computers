@@ -1,0 +1,19 @@
+##### INPUTS
+ham_name = 'doubled_anharmonic_fixed.txt' #'doubled_harmonic_fixed.txt' #'doubled_double_well_small.txt' #'doubled_anharmonic_small.txt' #'doubled_anharmoniccor.txt' #'doubled_anharmonic.txt' #'harmonic_pi_measurement.txt' #'doubled_harmonic.txt' #'harmonic_fermion.txt' #'anharmonic_osc.txt' #'anharmonic_NR.txt' # 'double_well.txt' # 'qho_3qubits_test.txt' # 'double_well5qcor.txt'
+circuit_name = 'RYSpecialFull2' # RYSpecialFull # RYSpecial # 'RY' # 'RYRZ' # RYSpecialDW # U3DW # RYSpecialDWO
+depth = 3 # 3 seems ok, although can be decreased with more shots
+shots = 8192 # 8192 or 16384 seems to work ok #### 10000 works for anharmonic
+optimizer_name = 'SPSA' # 'L_BFGS_B' # 'SPSA' # 'SAN'
+backend_name = 'local_qasm_simulator' #'ibmq_qasm_simulator' # 'local_statevector_simulator' # 'local_qasm_simulator'
+maxfun = 1000 # for LBFGSB optimizer, 1000 seems fine
+max_trials = 140 # for SPSA optimizer #### 30 works for anharmonic
+
+#### Results
+SPSA QASM predicted time to completion: 4.0 min
+Exact = -2.307643690702501e-15
+VQE = 0.08103500216637549
+Percent Error = 3511590740497240.00%
+Evaluation Time = 3.8 min
+Optimal Parameters: 
+[-0.523733907987947, 1.8074346296189063, -3.9505509590516996, 0.9148977530624679, -3.3378694325046623, -0.3266675895765236, 1.3306243088092147, 3.995716386993079, 0.7384186611184832, -2.417537954240047, -0.5615738995021812, 0.24708578795611097]
+e0wf = [0.00013859421581808445, -0.015057637584396804, -7.011986103214359e-05, 0.007618207214911239, 0.006944782083509404, -0.754519307309019, -0.0035136181673944278, 0.3817387952468549, -8.742202602836065e-05, 0.00949800954577062, 4.422998665617626e-05, -0.004805388922619905, -0.0043806079242351414, 0.4759333290578981, 0.0022163090794991014, -0.24079200345495955]
