@@ -1,0 +1,1 @@
+These files should be added to the directory Lib\site-packages\qiskit-acqua\utils\variational_forms. They are pluggables that you can then use as new trial circuits.
