@@ -1,0 +1,17 @@
+##### INPUTS
+ham_name = 'qho_3qubits_test.txt' 
+circuit_name = 'RYSpecialQHO' 
+depth = 1 
+shots = 8192 
+optimizer_name = 'SPSA' 
+backend_name = 'local_qasm_simulator' 
+max_trials = 20 
+
+##### Results
+SPSA QASM predicted time to completion: 0.6 min
+Exact = 0.5
+VQE = 0.5
+Percent Error =  0.00%
+Evaluation Time = 0.3 min
+opt_params = [-0.00420774]
+e0wf = [(0.9999977868625948+0j), (-0.0021038702223352655+0j), 0j, 0j, 0j, 0j, 0j, 0j]
