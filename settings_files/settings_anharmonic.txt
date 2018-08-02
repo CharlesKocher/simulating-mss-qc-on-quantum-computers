@@ -1,0 +1,17 @@
+##### INPUTS
+ham_name = 'anharmonic_osc.txt' 
+circuit_name = 'RYSpecial' 
+depth = 1 
+shots = 8192 
+optimizer_name = 'SPSA' 
+backend_name = 'local_qasm_simulator' 
+max_trials = 150 
+
+#### Results
+SPSA QASM predicted time to completion: 4.3 min
+Exact = 0.543115668497824
+VQE = 0.5213892046957476
+Percent Error =  4.00%
+Evaluation Time = 7.4 min
+opt_params = [-0.2162068]
+e0wf = [(0.9941625159144055+0j), 0j, (-0.10789296525139842+0j), 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j, 0j]
